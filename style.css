@@ -157,16 +157,16 @@ main h1 {
   background-size: 4px 100%;
 }
 
-main section {
+main article {
   display: flex;
   flex-direction: column;
 }
 
-main section .text {
+main article .text {
   margin: 0 15px;
 }
 
-main section img {
+main article img {
   margin: 15px 0;
 }
 
@@ -226,12 +226,12 @@ main section img {
     order: -2;
   }
 
-  main section {
+  main article {
     flex-direction: row;
     align-items: flex-start;
   }
 
-  main section img {
+  main article img {
     border-radius: 15px;
     margin-right: 15px;
     width: 350px;
@@ -270,7 +270,7 @@ main section img {
     flex-wrap: wrap;
   }
 
-  main section img {
+  main article img {
     width: 100%;
   }
 }
