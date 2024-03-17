@@ -48,6 +48,12 @@ body {
   font-family: "TT Lakes", "Verdana";
 }
 
+header {
+  background-color: #fff;
+  padding: 15px;
+  padding-left: 7px;
+}
+
 .header-menu,
 .header-menu ul,
 .services-menu ul {
@@ -55,10 +61,7 @@ body {
 }
 
 .header-menu {
-  background-color: #fff;
   justify-content: space-between;
-  padding: 15px;
-  padding-left: 7px;
 }
 
 .header-menu ul {
@@ -239,11 +242,14 @@ main article img {
 }
 
 @media (min-width: 1120px) {
+  header {
+    padding: 0;
+    background: none;
+  }
+
   .header-menu {
-    background-color: transparent;
     justify-content: flex-end;
     height: 15px;
-    padding: 0;
   }
 
   .header-menu__item--call,
