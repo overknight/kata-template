@@ -45,7 +45,7 @@
 body {
   margin: 0;
   background-color: #f8f8f8;
-  font-family: "TT Lakes", "Verdana";
+  font-family: "TT Lakes", "Verdana", sans-serif;
 }
 
 header {
