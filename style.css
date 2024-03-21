@@ -229,6 +229,10 @@ aside.sidebar-menu > *,
 
 .sidebar-menu__item a {
   padding: 15px;
+}
+
+.sidebar-menu__item a,
+.sidebar-menu button {
   -webkit-transition: -webkit-filter .6s;
   -o-transition: filter .6s;
   transition: filter .6s;
@@ -237,6 +241,11 @@ aside.sidebar-menu > *,
 .sidebar-menu__item a:hover {
   -webkit-filter: opacity(45%);
           filter: opacity(45%);
+}
+
+.sidebar-menu button:hover {
+  -webkit-filter: grayscale(70%);
+  filter: grayscale(70%);
 }
 
 .sidebar-menu__item--selected a {
