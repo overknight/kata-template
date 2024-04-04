@@ -362,6 +362,111 @@ main article img {
   font-weight: 600;
 }
 
+.brand-list {
+  text-wrap: nowrap;
+  overflow-x: scroll;
+}
+
+.brand-list,
+.brand-list-title h2 {
+  margin: 0 auto;
+}
+
+.brand-list,
+.brand-list-title {
+  padding: 0px 20px;
+}
+
+.brand-list-title,
+.brand-list h2 {
+  background-image: linear-gradient(to right, #f8f8f8, #fff);
+}
+
+.brand-list h2,
+.brand-list-title h2 {
+  padding: .83em 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #393E57;
+  text-transform: uppercase;
+}
+
+.brand-list h2 {
+  margin: 0;
+}
+
+.brand-list__item {
+  display: inline-block;
+  margin: 5px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: 15px 20px;
+  width: 255px;
+  height: 72px;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+}
+
+.brand-list__item--apple,
+.brand-list__item--hp {
+  background-position-y: 12px;
+}
+
+.brand-list__item--viewsonic,
+.brand-list__item--acer {
+  background-position-y: 25px;
+}
+
+.brand-list__item--lenovo {
+  background-image: url(img/brands/lenovo.png);
+}
+
+.brand-list__item--samsung {
+  background-image: url(img/brands/samsung.png);
+  background-position-y: 14px;
+}
+
+.brand-list__item--apple {
+  background-image: url(img/brands/apple.png);
+}
+
+.brand-list__item--viewsonic {
+  background-image: url(img/brands/viewsonic.png);
+}
+
+.brand-list__item--bosch {
+  background-image: url(img/brands/bosch.png);
+}
+
+.brand-list__item--hp {
+  /*background: #fff url(img/brands/hp.png) no-repeat 15px 12px;*/
+  background-image: url(img/brands/hp.png);
+}
+
+.brand-list__item--acer {
+  background-image: url(img/brands/acer.png);
+}
+
+.brand-list__item--sony {
+  background-image: url(img/brands/sony.png);
+}
+
+.brand-list__button {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.brand-list__button--go {
+  float: right;
+  width: 52px;
+  height: 54px;
+  background: url(img/icon-btn-go.svg) no-repeat left bottom;
+}
+
 @media (min-width: 768px) {
   .header-menu__item--call,
   .header-menu__item--chat,
@@ -387,6 +492,22 @@ main article img {
     border-radius: 15px;
     margin-right: 15px;
     width: 350px;
+  }
+
+  .brand-list {
+    text-wrap: wrap;
+    overflow-x: visible;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1119px) {
+  .brand-list,
+  .brand-list-title h2 {
+    width: 715px;
+  }
+  .brand-list__item {
+    width: 224px;
+    /* width: 30%; */
   }
 }
 
@@ -427,5 +548,10 @@ main article img {
 
   main article img {
     width: 100%;
+  }
+
+  .brand-list,
+  .brand-list-title h2 {
+    width: 1080px;
   }
 }
