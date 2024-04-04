@@ -4,45 +4,114 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="swiper.css">
   <title>Макет 1.5 - Свайпер</title>
 </head>
 <body>
   <div class="brand-list-title"><h2 class="brand">Ремонт техники различных брендов</h2></div>
-  <main class="brand-list">
+  <main class="brand-list brand-list--swiper">
     <!-- <h2>Ремонт техники различных брендов</h2> -->
-    <div class="brand-list__item brand-list__item--lenovo">
-      <button class="brand-list__button brand-list__button--go"></button>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="brand-list__item brand-list__item--lenovo">
+          <button class="brand-list__button brand-list__button--go"></button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="brand-list__item brand-list__item--samsung">
+          <button class="brand-list__button brand-list__button--go"></button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="brand-list__item brand-list__item--apple">
+          <button class="brand-list__button brand-list__button--go"></button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="brand-list__item brand-list__item--viewsonic">
+          <button class="brand-list__button brand-list__button--go"></button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="brand-list__item brand-list__item--bosch">
+          <button class="brand-list__button brand-list__button--go"></button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="brand-list__item brand-list__item--hp">
+          <button class="brand-list__button brand-list__button--go"></button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="brand-list__item brand-list__item--acer">
+          <button class="brand-list__button brand-list__button--go"></button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="brand-list__item brand-list__item--sony">
+          <button class="brand-list__button brand-list__button--go"></button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="brand-list__item brand-list__item--lenovo">
+          <button class="brand-list__button brand-list__button--go"></button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="brand-list__item brand-list__item--samsung">
+          <button class="brand-list__button brand-list__button--go"></button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="brand-list__item brand-list__item--apple">
+          <button class="brand-list__button brand-list__button--go"></button>
+        </div>
+      </div>
     </div>
-    <div class="brand-list__item brand-list__item--samsung">
-      <button class="brand-list__button brand-list__button--go"></button>
-    </div>
-    <div class="brand-list__item brand-list__item--apple">
-      <button class="brand-list__button brand-list__button--go"></button>
-    </div>
-    <div class="brand-list__item brand-list__item--viewsonic">
-      <button class="brand-list__button brand-list__button--go"></button>
-    </div>
-    <div class="brand-list__item brand-list__item--bosch">
-      <button class="brand-list__button brand-list__button--go"></button>
-    </div>
-    <div class="brand-list__item brand-list__item--hp">
-      <button class="brand-list__button brand-list__button--go"></button>
-    </div>
-    <div class="brand-list__item brand-list__item--acer">
-      <button class="brand-list__button brand-list__button--go"></button>
-    </div>
-    <div class="brand-list__item brand-list__item--sony">
-      <button class="brand-list__button brand-list__button--go"></button>
-    </div>
-    <div class="brand-list__item brand-list__item--lenovo">
-      <button class="brand-list__button brand-list__button--go"></button>
-    </div>
-    <div class="brand-list__item brand-list__item--samsung">
-      <button class="brand-list__button brand-list__button--go"></button>
-    </div>
-    <div class="brand-list__item brand-list__item--apple">
-      <button class="brand-list__button brand-list__button--go"></button>
-    </div>
+    <div class="swiper-pagination"></div>
+    <button class="brand-list__button brand-list__button--expand">Показать все</button>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    let swiper={destroyed: true}
+
+    const makeSwiper=function() {
+      swiper=new Swiper(".brand-list--swiper", {
+        speed: 400,
+        spaceBetween: 100,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets"
+        }
+      })
+    }
+
+    if (window.matchMedia("(max-width: 767px)").matches) makeSwiper()
+
+    window.addEventListener("resize", function(e) {
+      if (e.target.outerWidth >= 768 && !swiper.destroyed) {
+        swiper.destroy()
+      } else if (e.target.outerWidth < 768 && swiper.destroyed) {
+        makeSwiper()
+      }
+    })
+
+    const brandList=document.querySelector(".brand-list")
+    const btnBrandListExpandToggle=
+      brandList.querySelector(".brand-list > .brand-list__button")
+    btnBrandListExpandToggle.addEventListener("click", function() {
+      if (btnBrandListExpandToggle.classList.contains("brand-list__button--collapse")) {
+        brandList.classList.remove("brand-list--expanded")
+        btnBrandListExpandToggle.classList.remove("brand-list__button--collapse")
+        btnBrandListExpandToggle.classList.add("brand-list__button--expand")
+        btnBrandListExpandToggle.textContent="Показать все"
+      } else {
+        brandList.classList.add("brand-list--expanded")
+        btnBrandListExpandToggle.classList.remove("brand-list__button--expand")
+        btnBrandListExpandToggle.classList.add("brand-list__button--collapse")
+        btnBrandListExpandToggle.textContent="Скрыть"
+      }
+    })
+  </script>
 </body>
 </html>
